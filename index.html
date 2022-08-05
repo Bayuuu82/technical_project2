@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Kalkulator BMI</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="deskripsi">
+          <h1 class="teks">Kalkulator BMI</h1>
+          <p class="teks">
+            Body Mass Index (BMI) atau Indeks Massa Tubuh (IMT) adalah angka yang menjadi penilaian standar untuk menentukan apakah berat badan Anda tergolong normal, kurang, berlebih, atau obesitas. Rumus BMI untuk satuan KG dan CM adalah
+            Berat Badan/(Tinggi Badan/100)^2
+          </p>
+          <p class="teks">Silahkan isi form dibawah untuk menghitung</p>
+        </div>
+        <br />
+        <form action="" id="form">
+          <div class="field">
+            <input type="text" id="nama" name="nama" class="input" required />
+            <span></span>
+            <label>Nama</label>
+          </div>
+          <div class="field">
+            <input type="text" id="berat" name="berat" class="input" onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
+            <span></span>
+            <label for="">Berat Badan</label>
+          </div>
+          <div class="field">
+            <input type="text" id="tinggi" name="tinggi" class="input" onkeypress="return event.charCode >= 48 && event.charCode <=57" required />
+            <span></span>
+            <label for="">Tinggi Badan</label>
+          </div>
+          <input type="submit" class="button" value="Hitung" />
+          <div class="hasil">
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <script src="/javascript.js"></script>
+  </body>
+</html>

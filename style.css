@@ -1,0 +1,123 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #272343;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.deskripsi {
+  display: flex;
+  flex-direction: column;
+}
+.deskripsi .teks {
+  margin: 5px;
+}
+.deskripsi h1 {
+  align-self: center;
+}
+.form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+form .field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 10px 0;
+}
+.field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 35px;
+  font-size: 15px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  color: #adadad;
+  font-size: 15px;
+  transform: translatey(-50%);
+  -webkit-transform: translatey(-50%);
+  -moz-transform: translatey(-50%);
+  -ms-transform: translatey(-50%);
+  -o-transform: translatey(-50%);
+  pointer-events: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.field span::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #272343;
+  transition: .5s;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+
+.field input:focus ~ label,
+.field input:valid ~ label {
+  top: -1px;
+  color: #272343;
+  font-size: 12px;
+  font-weight: 600;
+}
+.field input:focus ~ span::before,
+.field input:valid ~ span::before {
+  width: 100%;
+}
+
+form .button {
+  background-color: #272343;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 15px;
+  color: #fff;
+  width: 50%;
+  align-self: center;
+  margin: 10px;
+  cursor: pointer;
+  transition: .5s;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  -webkit-transition: .5s;
+  -moz-transition: .5s;
+  -ms-transition: .5s;
+  -o-transition: .5s;
+}
+
+form .button:hover {
+  transform: scale(1.10, 1.10);
+}
+
