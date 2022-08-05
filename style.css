@@ -36,6 +36,8 @@ section {
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 form .field {
   position: relative;
@@ -102,9 +104,10 @@ form .button {
   padding: 10px 20px;
   border-radius: 15px;
   color: #fff;
-  width: 50%;
-  align-self: center;
+  width: 100%;
+  position: relative;
   margin: 10px;
+  margin-left: 0;
   cursor: pointer;
   transition: .5s;
   -webkit-border-radius: 15px;

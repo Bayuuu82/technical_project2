@@ -1,30 +1,25 @@
-
-// let nama = document.getElementById("nama");
-// let berat = document.getElementById("berat");
-// let tinggi = document.getElementById("tinggi");
-// function hitung()
-// ambil semua kebutuhan dari html
 let userform = document.getElementById("form");
 let button = document.getElementsByClassName("button");
-let outHasil = document.getElementsByClassName("hasil");
+let outHasil = document.getElementById("hasil");
+let submit = document.getElementById("submit");
 
 
-// buat event form untuk mengeksekusi isi form
-userform.addEventListener('submit', function (event) {
-    // untuk devault supaya tidak refresh karna males pake button
-    event.preventDefault();
-    // isialisasikan value yang di masukan dalam form menjadi object karna saya lebih ngerti
-    let formobject = new FormData(userform)
-    let formvalue = Object.fromEntries(formobject)
-    
-    // formvalue.nama
-    // formvalue.berat
-    // formvalue.tinggi
-    
-    console.log(formvalue.nama, formvalue.berat, formvalue.tinggi)
-    // `Berat Badan/(Tinggi Badan/100)^2`;
-    let caritinggi = formvalue.tinggi/100;
-    let pangkat = caritinggi**2;
-    let bmi = formvalue.berat/pangkat;
-    console.log(bmi);
+submit.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  const UserName = document.getElementById("nama").value;
+  const UserBerat = document.getElementById("berat").value;
+  const UserTinggi = document.getElementById("tinggi").value;
+
+  const BMI = UserBerat / ((UserTinggi * UserTinggi) / 10000).toFixed(1);
+
+  if (BMI <= 18.5) {
+    outHasil.innerHTML = `${UserName}, BMI kamu adalah ${BMI} Artinya kamu <b>Kurus`;
+  } else if (BMI > 18.5 && BMI < 25) {
+    outHasil.innerHTML = `${UserName}, BMI kamu adalah ${BMI} Artinya kamu <b>Normal`;
+  } else if (BMI >= 25 && BMI < 30) {
+    outHasil.innerHTML = `${UserName}, BMI kamu adalah ${BMI} Artinya kamu <b>Gendut`;
+  } else {
+    outHasil.innerHTML = `${UserName}, BMI kamu adalah ${BMI} Artinya kamu <b>Obesitas`;
+  }
 });
